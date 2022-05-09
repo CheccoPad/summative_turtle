@@ -11,7 +11,6 @@ import turtle
 t1 = turtle.Turtle()
 # t2 = turtle.Turtle()
 
-
 def fibonacci_scale(b):
     c = 0
 
