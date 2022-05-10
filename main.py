@@ -16,8 +16,8 @@ t1 = turtle.Turtle()
 t2 = turtle.Turtle()
 
 # set turtle speeds
-t1.speed(1000)
-t2.speed(1000)
+t1.speed(10)
+t2.speed(10)
 
 # hide turtle so only the lines is shown
 t1.hideturtle()
@@ -33,8 +33,8 @@ t2.color('green')
 def do_fibonacci_scale():
     b = 1
     c = 0
-    int(input('big do you want the fibonacci number to be? (Answer with and int)'))
-    while c <= 8:
+    user_input = int(input('how big do you want the fibonacci number to be? (Answer with and int)(8 is recommended)'))
+    while c <= user_input:
         i = 0
         a = b
         b = c
