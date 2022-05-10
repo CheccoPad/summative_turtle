@@ -8,59 +8,51 @@
 
 import turtle
 
+# declare turtles
+# t1 draws the squares
 t1 = turtle.Turtle()
+
+# t2 draws the spiral
 t2 = turtle.Turtle()
 
+# set turtle speeds
 t1.speed(1000)
 t2.speed(1000)
 
+# hide turtle so only the lines is shown
 t1.hideturtle()
 t2.hideturtle()
 
+# the squares are orange
 t1.color('orange')
+
+# the spiral is green
 t2.color('green')
 
 
-def dividing_by_2(x):
-    while x > 1.0:
-        x = x / 2
-    return x
-
-
-def dividing_by_3(x):
-    while x > 1.0:
-        x = x / 3
-    return x
-
-
-def dividing_by_4(x):
-    while x > 1:
-        x = x / 4
-    return x
-
-
-def fibonacci_scale():
+def do_fibonacci_scale():
     b = 1
     c = 0
-
-    while c <= 4000000:
+    int(input('big do you want the fibonacci number to be? (Answer with and int)'))
+    while c <= 8:
         i = 0
         a = b
         b = c
         c = a + b
 
+        # create the circle
         while i < 5:
-            t1.hideturtle()
             t1.forward(c * 20)
             t1.left(90)
 
             i += 1
 
+        # create a quarter circle for every square
         t2.circle(c * 20, 90)
 
         t1.forward(c * 20)
 
 
-fibonacci_scale()
+do_fibonacci_scale()
 
 turtle.done()
