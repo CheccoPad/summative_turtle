@@ -16,8 +16,8 @@ t1 = turtle.Turtle()
 t2 = turtle.Turtle()
 
 # set turtle speeds
-t1.speed(10)
-t2.speed(10)
+t1.speed(15)
+t2.speed(15)
 
 # hide turtle so only the lines is shown
 t1.hideturtle()
@@ -30,16 +30,20 @@ t1.color('orange')
 t2.color('green')
 
 
-def do_fibonacci_scale():
-    b = 1
-    c = 0
-    user_input = int(input('how big do you want the fibonacci number to be? (Answer with and int)(8 is recommended)'))
-    while c <= user_input:
-        i = 0
-        a = b
-        b = c
-        c = a + b
+def fibonacci_numb(n):
+    if n < 2:
+        return n
+    else:
+        return fibonacci_numb(n - 1) + fibonacci_numb(n - 2)
 
+
+def do_fibonacci_scale(b):
+    c = 0
+    x = 0
+    fib = fibonacci_numb(x)
+
+    while fib < x:
+        i = 0
         # create the circle
         while i < 5:
             t1.forward(c * 20)
@@ -53,6 +57,7 @@ def do_fibonacci_scale():
         t1.forward(c * 20)
 
 
-do_fibonacci_scale()
+do_fibonacci_scale(1)
+
 
 turtle.done()
