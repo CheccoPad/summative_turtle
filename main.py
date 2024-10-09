@@ -1,58 +1,30 @@
-# 0 - 2: at least 3 turtle functions
-#
-# 3 - 4: usage of loops
-#
-# 5 - 6: usage of array
-#
-# 7 -8: usage of recursion
-
 import turtle
+import random
+def fibonacci_turtle(it):
+    # define john and his details
+    john = turtle.Turtle()
+    john.right(90)
+    john.speed(10.1)
 
-# declare turtles
-# t1 draws the squares
-t1 = turtle.Turtle()
-
-# t2 draws the spiral
-t2 = turtle.Turtle()
-
-# set turtle speeds
-t1.speed(10)
-t2.speed(10)
-
-# hide turtle so only the lines is shown
-t1.hideturtle()
-t2.hideturtle()
-
-# the squares are orange
-t1.color('orange')
-
-# the spiral is green
-t2.color('green')
-
-
-def do_fibonacci_scale():
+    # start of fib sequence
+    a = 0
     b = 1
-    c = 0
-    user_input = int(input('how big do you want the fibonacci number to be? (Answer with and int)(8 is recommended)'))
-    while c <= user_input:
-        i = 0
-        a = b
-        b = c
-        c = a + b
 
-        # create the circle
-        while i < 5:
-            t1.forward(c * 20)
-            t1.left(90)
+    # main fibonacci sequence calculator
+    for x in range(it):
+        john.color('Dark Green')
+        b = a + b
+        a = b - a
 
-            i += 1
+        # make the square
+        for y in range(4):
+            john.forward(b)
+            john.left(90)
 
-        # create a quarter circle for every square
-        t2.circle(c * 20, 90)
-
-        t1.forward(c * 20)
+        # make the quarter circles
+        john.circle(b, extent=90)
 
 
-do_fibonacci_scale()
+fibonacci_turtle(15)
 
-turtle.done()
+turtle.Screen().exitonclick()
